@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="none" />
+  <g stroke="white" stroke-width="130" stroke-linecap="round">
+    <ellipse cx="350" cy="400" rx="250" ry="350" />
+    <line x1="50" y1="260" x2="300" y2="300" />
+  </g>
+  <g stroke="black" stroke-width="60" stroke-linecap="round">
+    <ellipse cx="350" cy="400" rx="250" ry="350" fill="ivory" />
+    <line x1="50" y1="260" x2="300" y2="300" />
+    <line x1="650" y1="260" x2="400" y2="300" />
+    <g fill="black">
+      <circle r="25" cx="220" cy="320" />
+      <circle r="25" cx="480" cy="320" />
+    </g>
+  </g>
+  <g fill="white">
+    <rect x="490" y="60" width="210" height="740" />
+    <rect x="0" y="512" width="512" height="288" />
+  </g>
+</svg>

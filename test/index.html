@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./test.css">
+<script src="https://7131.github.io/jmotion/v20/jmotion.js"></script>
+<script src="../generator.js"></script>
+<script src="../mode.js"></script>
+<script src="./data.js"></script>
+<script src="./table.js"></script>
+<script src="./test.js"></script>
+<title>Test for SiteswapGuessr</title>
+</head>
+
+<body>
+<header>
+<h1>Test for SiteswapGuessr</h1>
+<p>Press the "Execute" button in each section to execute the tests in that section, or press the "Execute all" button directly below to execute all tests. In both cases, the tests are executed line by line. If there are multiple arguments, represent them in an array.</p>
+</header>
+
+<main>
+<div>
+  <button id="all">Execute all</button>
+</div>
+
+<section id="text">
+<h2>Getting siteswap texts</h2>
+<table>
+  <tr><th>No.</th><th>argument(s)</th><th>expected</th><th>result</th></tr>
+</table>
+<div>
+  <button>Execute</button>
+</div>
+</section>
+
+<section id="fixed">
+<h2>Generating random siteswaps using fixed arguments</h2>
+<p>We perform <span id="fixed_trials">n</span> trials per line, but depending on the bias in the random numbers, the result may be NG. Try running it two or three times. If "All OK" appears, there is no problem.</p>
+<table>
+  <tr><th>No.</th><th>argument(s)</th><th>expected</th><th>result</th></tr>
+</table>
+<div>
+  <button>Execute</button>
+</div>
+</section>
+
+<section id="flex">
+<h2>Generating random siteswaps using variable arguments</h2>
+<p>We perform <span id="flex_trials">n</span> trials per line, but depending on the bias in the random numbers, the result may be NG. Try running it two or three times. If "All OK" appears, there is no problem.</p>
+<table>
+  <tr><th>No.</th><th>argument(s)</th><th>expected</th><th>result</th></tr>
+</table>
+<div>
+  <button>Execute</button>
+</div>
+</section>
+
+<section id="scoring">
+<h2>Scoring methods</h2>
+<table>
+  <tr><th>No.</th><th>argument(s)</th><th>expected</th><th>result</th></tr>
+</table>
+<div>
+  <button>Execute</button>
+</div>
+</section>
+
+</main>
+</body>
+
+</html>

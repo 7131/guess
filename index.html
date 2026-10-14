@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="./icon.ico" sizes="32x32">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icon.png">
+<link rel="stylesheet" type="text/css" href="./default.css">
+<script src="https://7131.github.io/jmotion/v20/jmotion.js"></script>
+<script src="./generator.js"></script>
+<script src="./facade.js"></script>
+<script src="./buttons.js"></script>
+<script src="./effector.js"></script>
+<script src="./mode.js"></script>
+<script src="./controller.js"></script>
+<title>SiteswapGuessr</title>
+</head>
+
+<body>
+<header>
+<h1>SiteswapGuessr</h1>
+</header>
+
+<main>
+<svg id="main" tabindex="0" viewBox="0 0 500 500">
+  <symbol id="space">
+    <defs>
+      <circle id="ball" r="15" />
+      <path id="orbit_right_00" d="m -90,0 c 0,27 60,27 60,0" />
+      <path id="orbit_right_10" d="m -60,10 c 0,9 20,9 20,0" />
+      <path id="orbit_left_00" d="m 90,0 c 0,27 -60,27 -60,0" />
+      <path id="orbit_left_10" d="m 60,10 c 0,9 -20,9 -20,0" />
+      <path id="orbit_right_01" d="m -30,0 c 0,-27 -60,-27 -60,0" />
+      <path id="orbit_right_11" d="m -40,10 c 0,-9 -20,-9 -20,0" />
+      <path id="orbit_left_01" d="m 30,0 c 0,-27 60,-27 60,0" />
+      <path id="orbit_left_11" d="m 40,10 c 0,-9 20,-9 20,0" />
+    </defs>
+    <g id="man" stroke="black" stroke-width="5" stroke-linecap="round" fill="none">
+      <path d="m -20,30 c -10,10 -10,20 -10,80 h -20" />
+      <path d="m 20,30 c 10,10 10,20 10,80 h 20" />
+      <g fill="ivory">
+        <ellipse cx="0" cy="-20" rx="40" ry="60" />
+        <ellipse cx="0" cy="-120" rx="25" ry="40" />
+      </g>
+      <line x1="-30" y1="-130" x2="-5" y2="-128" />
+      <line x1="30" y1="-130" x2="5" y2="-128" />
+      <circle r="2" cx="-14" cy="-126" />
+      <circle r="2" cx="14" cy="-126" />
+    </g>
+    <line id="arm_right_0" x1="-90" y1="0" x2="-60" y2="10" stroke="black" stroke-width="5" stroke-linecap="round" />
+    <line id="arm_right_1" x1="-60" y1="10" x2="-30" y2="-60" stroke="black" stroke-width="5" stroke-linecap="round" />
+    <line id="arm_left_0" x1="90" y1="0" x2="60" y2="10" stroke="black" stroke-width="5" stroke-linecap="round" />
+    <line id="arm_left_1" x1="60" y1="10" x2="30" y2="-60" stroke="black" stroke-width="5" stroke-linecap="round" />
+    <g id="hint_sheet"></g>
+  </symbol>
+  <defs>
+    <g id="start" class="button">
+      <rect x="-100" y="-25" width="200" height="50" rx="8" />
+      <text x="0" y="2">Play</text>
+    </g>
+    <g id="ok" class="button">
+      <rect x="-60" y="-25" width="120" height="50" rx="8" />
+      <text x="0" y="2">OK</text>
+    </g>
+    <g id="zoom_in" class="icon">
+      <rect width="60" height="60" rx="10" />
+      <circle cx="30" cy="25" r="12" />
+      <path d="M 10,45 c 10,-10 30,-10 40,0" />
+    </g>
+    <g id="zoom_out" class="icon">
+      <rect width="60" height="60" rx="10" />
+      <circle cx="30" cy="27" r="6" />
+      <path d="M 20,38 c 5,-5 15,-5 20,0" />
+    </g>
+    <g id="speed_up" class="icon">
+      <rect width="60" height="60" rx="10" />
+      <path d="M 15,15 l 15,15 l -15,15 z M 33,15 l 15,15 l -15,15 z" />
+    </g>
+    <g id="speed_down" class="icon">
+      <rect width="60" height="60" rx="10" />
+      <path d="M 20,15 l 25,15 l -25,15 z" />
+    </g>
+    <g id="rewind" class="icon">
+      <rect width="60" height="60" rx="10" />
+      <path d="M 12,25 l 12,-12 v 7 h 10 c 17,0 17,27 0,27 v -5 c 7,0 7,-12 0,-12 h -10 v 7 z" />
+    </g>
+    <g id="hint" class="icon">
+      <rect width="60" height="60" rx="10" />
+      <path d="M 27,37 c -3,-8 -7,-6 -7,-14 c 0,-12 20,-12 20,0 c 0,8 -4,6 -7,14 z M 26,42 h 8 M 28,45 c 0,2 4,2 4,0" />
+    </g>
+  </defs>
+  <g id="cover">
+    <use href="#start" x="250" y="250" />
+  </g>
+  <g id="game" class="hidden">
+    <use href="#space" width="500" height="500" />
+    <g id="game_buttons"></g>
+    <text id="game_round" x="30" y="50"></text>
+    <rect id="game_veil" class="hidden" x="0" y="0" width="500" height="500" />
+    <text id="game_guess" class="hidden" x="0" y="0"></text>
+  </g>
+  <g id="score" class="hidden">
+    <g>
+      <g class="title">
+        <text x="30" y="50">Guess</text>
+        <text x="30" y="100">Correct</text>
+      </g>
+      <g>
+        <text id="score_text_guess" x="160" y="50"></text>
+        <text id="score_text_correct" x="160" y="100"></text>
+      </g>
+    </g>
+    <g class="detail">
+      <g class="caption">
+        <text x="30" y="170">input string</text>
+        <text x="30" y="210">balls</text>
+        <text x="30" y="250">pattern</text>
+        <path d="M 20,270 h 460" stroke="black" />
+        <text x="30" y="300">total</text>
+        <text x="30" y="340">remaining hints</text>
+        <path d="M 20,360 h 460" stroke="black" />
+        <text x="30" y="390">score</text>
+      </g>
+      <g>
+        <text id="score_text_input" x="180" y="170"></text>
+        <text id="score_text_balls" x="180" y="210"></text>
+        <text id="score_text_pattern" x="180" y="250"></text>
+        <text id="score_text_hints" x="220" y="340"></text>
+      </g>
+      <g class="number">
+        <text id="score_value_input" x="470" y="170"></text>
+        <text id="score_value_balls" x="470" y="210"></text>
+        <text id="score_value_pattern" x="470" y="250"></text>
+        <text id="score_value_sum" x="470" y="300"></text>
+        <text id="score_value_hints" x="470" y="340"></text>
+        <text id="score_value_result" x="470" y="390"></text>
+      </g>
+    </g>
+    <use id="score_ok" href="#ok" x="250" y="460" />
+  </g>
+  <g id="total" class="hidden">
+    <text x="250" y="120">total score</text>
+    <text id="total_value" x="250" y="240"></text>
+    <use href="#ok" x="250" y="360" />
+  </g>
+</svg>
+<form id="entry" class="transparent">
+  <input id="estimate" type="text" placeholder="example: 441" inputmode="alphanumeric">
+  <button id="guess">Guess</button>
+</form>
+</main>
+
+<footer>
+<ul>
+  <li id="back" class="transparent"><a href="./index.html">Back</a></li>
+  <li><a href="./variation.html">List of SiteswapGuessr variations</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Siteswap" target="siteswap">Explanation of siteswap (external page)</a></li>
+</ul>
+</footer>
+</body>
+
+</html>

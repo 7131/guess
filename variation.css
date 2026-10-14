@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+body {
+    line-height: 1.8;
+    margin-bottom: 10ex;
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+input {
+    width: 90vw;
+}
+
+label {
+    margin: 0ex 1ex 1ex 0ex;
+}
+
+button {
+    margin-top: 3ex;
+    width: 90vw;
+}
+
+p#message {
+    color: red;
+    display: inline-block;
+    min-height: 1em;
+}
+
+dl dt {
+    margin-top: 2ex;
+}
+
+dl dd {
+    margin-left: 3ex;
+}
+
+@media (orientation: landscape) {
+
+    body {
+        line-height: 1.5;
+    }
+
+    input {
+        width: 50vh;
+    }
+
+    button {
+        width: 50vh;
+    }
+
+}

@@ -1,0 +1,165 @@
+@charset "utf-8";
+
+body {
+    line-height: 1.8;
+    margin-bottom: 10vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    margin: 0ex;
+}
+
+svg#main {
+    border: 1px solid gray;
+}
+
+g text {
+    font-size: 4ex;
+    dominant-baseline: middle;
+    text-anchor: middle;
+    cursor: default;
+}
+
+g.button {
+    stroke-width: 4px;
+    stroke-linejoin: round;
+    text {
+        font-size: 3ex;
+    }
+    rect {
+        fill: palegreen;
+        stroke: green;
+    }
+}
+
+g.icon {
+    stroke-width: 4px;
+    stroke-linejoin: round;
+    rect {
+        stroke: steelblue;
+    }
+}
+
+g#hint rect {
+    stroke: gold;
+}
+
+g#game {
+    text#game_round {
+        fill: brown;
+        stroke: maroon;
+    }
+    text#game_guess {
+        text-anchor: start;
+    }
+    rect {
+        fill: white;
+    }
+    use.normal {
+        fill: white;
+        stroke: black;
+    }
+    use.disabled {
+        fill: silver;
+        stroke: gray;
+    }
+    use.active {
+        fill: skyblue;
+        stroke: black;
+    }
+}
+
+g#score {
+    text {
+        text-anchor: start;
+    }
+    g.title {
+        fill: teal;
+    }
+    g.detail text {
+        font-size: 3ex;
+    }
+    g.caption {
+        fill: maroon;
+    }
+    g.number text {
+        text-anchor: end;
+        fill: navy;
+    }
+}
+
+g#total {
+    text#total_value {
+        font-size: 6ex;
+    }
+}
+
+form {
+    text-align: center;
+}
+
+input#estimate {
+    margin: 1ex 0ex;
+    width: 90vw;
+    font-size: 6vw;
+}
+
+button#guess {
+    width: 90vw;
+    height: 10vw;
+    font-size: 6vw;
+    background-color: palegreen;
+    border: 1vw solid green;
+    border-radius: 2vw;
+}
+
+button#guess:disabled {
+    background-color: silver;
+    border-color: gray;
+}
+
+li {
+    margin: 2ex 0ex;
+}
+
+.hidden {
+    display: none;
+}
+
+.transparent {
+    visibility: hidden;
+}
+
+@media (orientation: landscape) {
+
+    body {
+        line-height: 1.5;
+    }
+
+    svg#main {
+        height: 70vh;
+    }
+
+    form {
+        text-align: start;
+    }
+
+    input#estimate {
+        width: 65vh;
+        font-size: 4vh;
+    }
+
+    button#guess {
+        margin-left: 2vh;
+        width: 25vh;
+        height: 8vh;
+        font-size: 4vh;
+        border-width: 1vh;
+        border-radius: 2vh;
+    }
+
+}
+

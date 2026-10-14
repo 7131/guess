@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="./icon.ico" sizes="32x32">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icon.png">
+<link rel="stylesheet" type="text/css" href="./variation.css">
+<script src="https://7131.github.io/jmotion/v20/jmotion.js"></script>
+<script src="./generator.js"></script>
+<script src="./variation.js"></script>
+<title>SiteswapGuessr variations</title>
+</head>
+
+<body>
+<header>
+<h1>SiteswapGuessr variations</h1>
+</header>
+
+<main>
+<dl>
+  <dt><a href="./index.html?balls=3&period=-3&height=-5&title=beginners">for beginners</a></dt>
+  <dd>This is for those who aren't familiar with siteswaps.</dd>
+  <dd>3 balls, 3 or less of period, 5 or less in height.</dd>
+  <dd>Since there are only a few patterns, the same pattern appears repeatedly.</dd>
+  <dt><a href="./index.html?balls=3-7&period=-8&height=-12&title=vanilla">vanilla siteswap</a></dt>
+  <dd>This throws the balls one at a time, alternating between left and right.</dd>
+  <dd>3-7 balls, 8 or less of period, 12 or less in height.</dd>
+  <dt><a href="./index.html?balls=3-7&period=-8&height=-12&multi=100&title=multiplex">siteswap including multiplex</a></dt>
+  <dd>This always involves throwing multiple balls at once.</dd>
+  <dd>3-7 balls, 8 or less of period, 12 or less in height, 100% multiplex.</dd>
+  <dt><a href="./index.html?balls=3-7&period=-8&height=-12&sync=100&title=synchronous">synchronous pattern</a></dt>
+  <dd>This is a pattern to throw with both hands at the same time. It does not include multiplex.</dd>
+  <dd>3-7 balls, 8 or less of period, 12 or less in height, 100% synchronous.</dd>
+  <dt><a href="./index.html?balls=3-7&period=-8&height=-12&multi=100&sync=100&title=sync-multi">synchronous and multiplex pattern</a></dt>
+  <dd>This is a pattern to throw with both hands at the same time, always involves a multiplex.</dd>
+  <dd>3-7 balls, 8 or less of period, 12 or less in height, 100% multiplex, 100% synchronous.</dd>
+  <dt><a href="./index.html">SiteswapGuessr game</a></dt>
+  <dd>Any pattern is possible. There are a total of 5 rounds.</dd>
+  <dd>The number of balls, period, height, multiplex, and synchronous settings change with each round.</dd>
+</dl>
+
+<section>
+<h2>Fixed siteswap</h2>
+<p>You can specify the siteswap of your choice. You can share the URL to send the question to others.</p>
+<form id="display">
+<div>
+  <label for="siteswap">Siteswap specification</label>
+  <input id="siteswap" type="text">
+</div>
+<div>
+  <button>Display</button>
+</div>
+</form>
+<div>
+  <button id="copy">Copy the URL</button>
+</div>
+<p id="message"></p>
+</section>
+
+</main>
+</body>
+
+</html>
